@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	
+	
+	<head>
+	
+	<!--to hide the contents when loading-->
+	<script>
+		function loading(){
+			$("#user").hide();
+			$("#username").hide();
+			$("#pass").hide();
+			$("#password").hide();
+			$("#submit").hide();
+		}
+	</script>
+		<meta charset="UTF-8"/>
+		
+		<!-- To prevent zoom in mobile phone -->
+		<meta name="viewport" content="width=device-width, user-scalable=no" />
+		
+		<!-- To prevent back to the login page -->
+		<script language="javascript" type="text/javascript">
+			window.history.forward(); <!--try to use infinite loop to make it stronger-->
+		</script> 
+		
+		<script type= "text/javascript" charset="utf-8" src="cordova.js"></script>
+		<script type="text/javascript" charset="utf-8" src="cordova_plugins.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/jquery-min.js"></script>
+		
+		<script type="text/javascript" charset="utf-8">
+		
+		<!--Enable cross domain-->
+		$( document ).on( "mobileinit", function() {
+				$.mobile.allowCrossDomainPages = true;
+        		$.mobile.ajaxEnabled = true;
+       			$.mobile.pushStateEnabled = false;
+       		 	$.mobile.allowCrossDomainPages = true;
+       		 	$.support.cors = true; 
+       	});
+		
+		</script>
+		
+
+
+		
+		<script type="text/javascript" charset="utf-8" src="js/jquery.xdomainrequest.min.js"></script>
+		<link href="css/index.css" rel="stylesheet">
+		<script type="text/javascript" charset="utf-8" src="js/index.js"></script>
+		
+		
+	</head>
+	
+	<body>
+		
+				<div id="LoadingImage" style="display: none">
+					<center><img src="img/loading.gif" width="55%" height="55%"/></center>
+				</div>
+				
+				<label><font id="user" size="3"><strong><center>User ID</center></strong></font></label>
+				<center><input  id="username" type="text" ></center>
+				<br/>
+				<label><font id="pass" size="3" color="white"><strong><center>Password</center></strong></font></label>
+				<center><input id="password" type="password" ></center>
+				<br/>
+				<center><input id="submit" type="button" value="LOGIN" onclick="loading()"></center>
+				
+				
+				
+		
+		
+	</body>
+	
+	
+	
+</html> 
